@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Http\Request;
+use App\Interfaces\UserInterface;
 
 
-class UserService
+
+class UserService implements UserInterface
 {
     public function register(RegisterRequest $request) {
         $data = $request->validated();

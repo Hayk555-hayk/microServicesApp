@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\UserService;
+use App\Interfaces\UserInterface;
 use App\Http\Requests\User\RegisterRequest;
 
 
 class AuthController extends Controller
 {
-    public function __construct(UserService $userService) 
+    public function __construct(private UserInterface $userService) 
     {
-        $this->userService = $userService;
     }
 
     public function register(RegisterRequest $request)
